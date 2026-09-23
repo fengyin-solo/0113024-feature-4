@@ -32,12 +32,13 @@ export const useUserStore = defineStore('user', {
       return res
     },
 
-    logout() {
+     logout() {
       this.token = ''
       this.userInfo = {}
       this.roles = []
       this.permissions = []
       localStorage.removeItem('token')
+      localStorage.removeItem('username')
     }
   }
 })

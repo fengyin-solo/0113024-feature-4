@@ -53,6 +53,7 @@ const handleLogin = async () => {
       try {
         // 模拟登录，实际项目中调用真实API
         localStorage.setItem('token', 'mock-token-' + Date.now())
+        localStorage.setItem('username', loginForm.username)
         userStore.token = localStorage.getItem('token') || ''
         ElMessage.success('登录成功')
         router.push('/')

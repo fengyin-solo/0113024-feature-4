@@ -48,7 +48,7 @@
             <el-dropdown @command="handleCommand">
               <div class="user-info">
                 <el-avatar :size="32" icon="User" />
-                <span class="username">管理员</span>
+                <span class="username">{{ username }}</span>
                 <el-icon><ArrowDown /></el-icon>
               </div>
               <template #dropdown>
@@ -84,6 +84,7 @@ const router = useRouter()
 const route = useRoute()
 const userStore = useUserStore()
 const isCollapse = ref(false)
+const username = ref(localStorage.getItem('username') || '管理员')
 
 const menuList = computed(() => {
   const routes = router.options.routes.find(r => r.path === '/')?.children || []
